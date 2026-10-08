@@ -1,21 +1,21 @@
 # 🎮 GameDev Engine Lab
 
-เว็บสื่อการสอน Game Development ที่ออกแบบมาเพื่อให้เข้าใจกลไกการทำงานของเกมเอนจินทั้ง **"แบบเข้าใจง่าย (ELI5)"**, **"แบบเชิงลึกระดับฮาร์ดแวร์ (Deep Dive)"**, **"ตัวอย่างโค้ด (C#/C++/Unity)"**, **"Interactive Simulation & Performance Benchmark"** และ **"แบบทดสอบวัดความรู้ 2 ระดับ"** รันสดบนเบราว์เซอร์ 60 FPS พร้อมเสียงเอฟเฟกต์สังเคราะห์ (Web Audio API)
+เว็บสื่อการสอน Game Development ที่ออกแบบมาเพื่อให้เข้าใจกลไกการทำงานของเกมเอนจินทั้ง **"ELI5 / Beginner"**, **"Deep Dive & Engine Architecture"**, **"Code Examples & Best Practices"**, **"Interactive Simulations & Benchmarks"** และ **"Two-Tier Knowledge Quizzes"** รันสดบนเบราว์เซอร์ 60 FPS พร้อมเสียงเอฟเฟกต์สังเคราะห์ (Web Audio API)
 
 ---
 
 ## 🚀 Key Features
 
 ### 1. 3 Explanation Tiers for Every Topic
-* 🌱 **แบบเข้าใจง่าย (ELI5 / Beginner)**: อธิบายด้วยภาพเปรียบเทียบในชีวิตประจำวัน (Real-world Analogy) ที่เห็นภาพชัดเจน พร้อมสรุป 4 ประเด็นสำคัญ และทำไมสิ่งนี้ถึงส่งผลต่อ Game Feel ของผู้เล่น
-* ⚡ **แบบเชิงลึก (Deep Dive / Engine Architecture)**: เจาะลึกระดับ Low-Level Hardware, Memory Heap/Stack, L1/L2/L3 Cache Lines (64 Bytes), Generational Garbage Collector, Big-O Complexity, Math Formulas, และการทำงานภายในของเอนจินชั้นนำอย่าง **Unity (DOTS/PhysX)**, **Unreal Engine 5 (Chaos/Mass Entity/Nanite)** และ **Godot 4 (Servers/BVH)**
-* 💻 **ตัวอย่างโค้ด & Best Practices**: เปรียบเทียบโค้ด **❌ Bad Pattern (ก่อน Optimize)** เทียบกับ **✅ Optimized Pattern (หลัง Optimize)** แบบเคียงข้างกัน พร้อมคำอธิบายจุดที่ทำให้เกมกระตุก
+* 🌱 **ELI5 / Beginner**: อธิบายด้วยภาพเปรียบเทียบในชีวิตประจำวัน (Real-world Analogy) ที่เห็นภาพชัดเจน พร้อมสรุป 4 ประเด็นสำคัญ และทำไมสิ่งนี้ถึงส่งผลต่อ Game Feel ของผู้เล่น
+* ⚡ **Deep Dive & Engine Architecture**: เจาะลึกระดับ Low-Level Hardware, Memory Heap/Stack, L1/L2/L3 Cache Lines (64 Bytes), Generational Garbage Collector, Big-O Complexity, Math Formulas, และการทำงานภายในของเอนจินชั้นนำอย่าง **Unity (DOTS/PhysX)**, **Unreal Engine 5 (Chaos/Mass Entity/Nanite)** และ **Godot 4 (Servers/BVH)**
+* 💻 **Code Examples & Best Practices**: เปรียบเทียบโค้ด **❌ Bad Pattern (Unoptimized)** เทียบกับ **✅ Optimized Pattern** แบบเคียงข้างกัน พร้อมคำอธิบายจุดที่ทำให้เกมกระตุก
 
 ---
 
 ### 2. 🧪 Interactive Simulations & Benchmarks (Live 60 FPS)
 
-| # | Lab & Topic | Simulation | Performance Metrics | Interactive Controls |
+| # | Lab & Topic | Simulation Focus | Performance Metrics | Interactive Controls |
 |---|---|---|---|---|
 | **1** | **Object Pooling vs. Dynamic Allocation** | Bullet Hell Cannon (ยิงกระสุน 1,000 นัด/วินาที) | FPS, Frame Time (ms), Heap Allocations, GC Stop-The-World Pauses, Memory Churn | สลับโหมด Pool vs Dynamic, ปรับอัตราการยิง (50-1200 นัด/s), เปิด/ปิดเสียง |
 | **2** | **Spatial Partitioning (Grid) vs. Brute-Force** | การตรวจจับการชนของมอนสเตอร์ 2,500 ตัว ($O(N^2)$ vs $O(N)$) | Collision Checks ต่อเฟรม (3 ล้านคู่ vs 1 หมื่นคู่), Frametime, % การลดภาระ (99.5%) | ปรับจำนวนยูนิต (100-2,500 ตัว), ขนาดช่อง Grid (20-80px), เปิด/ปิด Grid Overlay |
