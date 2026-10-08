@@ -13,6 +13,7 @@ import {
   Check,
   Copy,
   Terminal,
+  HelpCircle,
 } from 'lucide-react';
 import { ObjectPoolLab } from './interactive/ObjectPoolLab';
 import { SpatialPartitionLab } from './interactive/SpatialPartitionLab';
@@ -29,6 +30,7 @@ import { TextureStreamingLab } from './interactive/TextureStreamingLab';
 import { AudioConcurrencyLab } from './interactive/AudioConcurrencyLab';
 import { AsyncLoadingLab } from './interactive/AsyncLoadingLab';
 import { ChallengeView } from './ChallengeView';
+import { QuizView } from './QuizView';
 import { sound } from '../utils/audio';
 
 interface TopicDetailProps {
@@ -37,7 +39,7 @@ interface TopicDetailProps {
 }
 
 export const TopicDetail: React.FC<TopicDetailProps> = ({ topic, onBack }) => {
-  const [activeTab, setActiveTab] = useState<'simple' | 'deep' | 'code' | 'lab' | 'challenge'>('simple');
+  const [activeTab, setActiveTab] = useState<'simple' | 'deep' | 'code' | 'lab' | 'challenge' | 'quiz'>('simple');
   const [exampleVariant, setExampleVariant] = useState<'pure' | 'unity' | 'unreal'>('pure');
   const [copiedCode, setCopiedCode] = useState(false);
 
@@ -149,7 +151,17 @@ export const TopicDetail: React.FC<TopicDetailProps> = ({ topic, onBack }) => {
               className="px-3 py-1.5 rounded-xl bg-purple-500/20 border border-purple-500/40 text-xs font-semibold text-purple-300 hover:bg-purple-500/30 transition-colors flex items-center gap-1.5"
             >
               <Terminal className="w-3.5 h-3.5" />
-              <span>🎯 ทำโจทย์ฝึกเติม Logic (3 รูปแบบ) ➔</span>
+              <span>🎯 โจทย์เติม Logic ➔</span>
+            </button>
+            <button
+              onClick={() => {
+                setActiveTab('quiz');
+                sound.playClick(700);
+              }}
+              className="px-3 py-1.5 rounded-xl bg-indigo-500/20 border border-indigo-500/40 text-xs font-semibold text-indigo-300 hover:bg-indigo-500/30 transition-colors flex items-center gap-1.5"
+            >
+              <HelpCircle className="w-3.5 h-3.5" />
+              <span>📝 ทำแบบทดสอบ 2 ระดับ (สุ่ม 5 ข้อ) ➔</span>
             </button>
           </div>
         </div>
@@ -163,6 +175,7 @@ export const TopicDetail: React.FC<TopicDetailProps> = ({ topic, onBack }) => {
           { id: 'code', label: '💻 ตัวอย่างโค้ด (Code & Practices)', icon: Code2 },
           { id: 'lab', label: '🧪 Interactive Lab & Benchmark', icon: Beaker },
           { id: 'challenge', label: '🎯 โจทย์ฝึกเติม Logic (3 รูปแบบ)', icon: Terminal },
+          { id: 'quiz', label: '📝 แบบทดสอบ 2 ระดับ (Quiz)', icon: HelpCircle },
         ].map(tab => {
           const Icon = tab.icon;
           const isActive = activeTab === tab.id;
@@ -522,6 +535,11 @@ export const TopicDetail: React.FC<TopicDetailProps> = ({ topic, onBack }) => {
       {/* TAB CONTENT 5: โจทย์ฝึกเติม Logic (3 รูปแบบ: Pure / Unity / Unreal) */}
       {activeTab === 'challenge' && (
         <ChallengeView challenges={topic.challenges} />
+      )}
+
+      {/* TAB CONTENT 6: แบบทดสอบ 2 ระดับ (เริ่มต้น & ปฏิบัติจริง สุ่ม 5 ข้อ) */}
+      {activeTab === 'quiz' && (
+        <QuizView topicId={topic.id} topicTitle={topic.title} />
       )}
     </div>
   );

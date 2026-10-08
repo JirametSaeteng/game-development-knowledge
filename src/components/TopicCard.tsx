@@ -99,6 +99,10 @@ export const TopicCard: React.FC<TopicCardProps> = ({ topic, onSelect }) => {
                 <span>Lab</span>
               </span>
             )}
+
+            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/30">
+              Quiz 2 ระดับ
+            </span>
           </div>
         </div>
 
